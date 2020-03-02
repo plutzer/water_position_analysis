@@ -16,6 +16,7 @@ def download_structure(pdb_code):
 		print("Downloading structure: " + pdb_code)
 		url = 'https://files.rcsb.org/download/' + pdb_code + '.pdb'
 		wget.download(url,structures_directory + pdb_code + '.pdb')
+	return structures_directory + pdb_code + '.pdb'
 
 def get_structure(filename,structure_id = 'default'):
     parser = PDBParser(PERMISSIVE = 1)
