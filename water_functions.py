@@ -3,6 +3,19 @@ from Bio.PDB.PDBParser import PDBParser
 import numpy as np
 from math import sqrt
 from matplotlib import pyplot as plt
+import wget
+import os
+
+base_directory = os.path.expanduser('~') + '/pdbstruct/water_position_analysis'
+structures_directory = base_directory + '/structures/' 
+
+def download_structure(pdb_code):
+	if (pdb_code + '.pdb') in os.listdir(structures_directory):
+		print("Structure: " + pdb_code + " already downloaded.")
+	else:
+		print("Downloading structure: " + pdb_code)
+		url = 'https://files.rcsb.org/download/' + pdb_code + '.pdb'
+		wget.download(url,structures_directory + pdb_code + '.pdb')
 
 def get_structure(filename,structure_id = 'default'):
     parser = PDBParser(PERMISSIVE = 1)
