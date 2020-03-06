@@ -1,6 +1,7 @@
 from water_functions import *
 import sys
 import seaborn as sns
+import os
 
 def run_grandpa(pdb_name):
 	structure_file = download_structure(pdb_name)
@@ -24,6 +25,7 @@ def run_grandpa(pdb_name):
 	axes[0,1].title.set_text('Distribution of Water Distances')
 	axes[0,1].set_xlabel('Distance from COM (Gyration Radii)')
 	axes[0,1].set_ylabel('Density')
+	plt.savefig(os.getcwd() + '/Waterplots/' + pdb_name)
 	plt.show()
 
 pdb_name = sys.argv[1]
