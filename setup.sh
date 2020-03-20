@@ -1,4 +1,7 @@
-mv water_position_analysis/structures .
-mv water_position_analysis/Waterplots .
-mv water_position_analysis/water_functions.py .
-mv water_position_analysis/water.py .
+mv water_position_analysis/trunk/structures ~
+mv water_position_analysis/trunk/Waterplots ~
+mv water_position_analysis/trunk/water_functions.py ~
+mv water_position_analysis/trunk/water.py ~
+
+pip install seaborn
+pip install biopython
